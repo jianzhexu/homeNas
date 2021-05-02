@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="info" name="XMLConfigTest" packages="com.gt.homeNas">
+    <Properties>
+        <Property name="filename">app.log</Property>
+    </Properties>
+    <ThresholdFilter level="trace"/>
+
+    <Appenders>
+        <Console name="STDOUT">
+            <PatternLayout pattern="[%t] %d{DEFAULT} %l:%m %X%n"/>
+        </Console>
+        <Console name="FLOW">
+            <!-- this pattern outputs class name and line number -->
+            <PatternLayout pattern="%C{1}.%M %m %ex%n"/>
+            <filters>
+                <MarkerFilter marker="FLOW" onMatch="ACCEPT" onMismatch="NEUTRAL"/>
+                <MarkerFilter marker="EXCEPTION" onMatch="ACCEPT" onMismatch="DENY"/>
+            </filters>
+        </Console>
+
+        <RollingFile name="RollingFile" fileName="${filename}"
+                     filePattern="logs/$${date:yyyy-MM}/app-%d{MM-dd-yyyy}-%i.log.gz">
+            <PatternLayout>
+                <Pattern>%d %p %l [%t] %m%n</Pattern>
+            </PatternLayout>
+            <Policies>
+                <TimeBasedTriggeringPolicy />
+                <SizeBasedTriggeringPolicy size="10 MB"/>
+            </Policies>
+            <DefaultRolloverStrategy max="20"/>
+        </RollingFile>
+    </Appenders>
+
+    <Loggers>
+        <Logger name="com.gt.homeNas" level="info" additivity="false">
+            <Property name="user">${sys:user.name}</Property>
+            <AppenderRef ref="RollingFile" level="info">
+            </AppenderRef>
+            <AppenderRef ref="STDOUT" level="info"/>
+            <AppenderRef ref="FLOW" level="info"/>
+        </Logger>
+
+        <Root level="trace">
+            <AppenderRef ref="RollingFile"/>
+        </Root>
+    </Loggers>
+
+</Configuration>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.effect.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gt.homeNas.application.controller.MainController">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="170.0" minWidth="170.0" prefWidth="170.0" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="830.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints maxHeight="-Infinity" minHeight="64.0" prefHeight="64.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="-Infinity" minHeight="600.0" prefHeight="800.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="-Infinity" minHeight="20.0" prefHeight="20.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+         <children>
+            <Button fx:id="resourceManagerButton" layoutX="42.0" layoutY="34.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#openResourceManager" prefHeight="30.0" prefWidth="100.0" text="资源管理" AnchorPane.leftAnchor="29.0" AnchorPane.rightAnchor="29.0" AnchorPane.topAnchor="34.0" />
+            <Button fx:id="privateCloudButton" layoutX="33.0" layoutY="79.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#openPrivateCloud" prefHeight="30.0" prefWidth="100.0" text="私有云" AnchorPane.leftAnchor="29.0" AnchorPane.rightAnchor="29.0" />
+            <Button fx:id="settingsButton" layoutX="28.0" layoutY="125.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#openSettings" prefHeight="30.0" prefWidth="100.0" text="我的设置" AnchorPane.leftAnchor="29.0" AnchorPane.rightAnchor="29.0" />
+         </children>
+      </AnchorPane>
+      <ScrollPane fx:id="mainContentPanel" prefHeight="200.0" prefWidth="820.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+         <GridPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </GridPane.margin></ScrollPane>
+      <HBox fx:id="titleHBox" alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1">
+         <children>
+            <ImageView fx:id="userIconImage" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin>
+            </ImageView>
+            <Label fx:id="userNameLabel" text="用户名称">
+               <HBox.margin>
+                  <Insets right="20.0" />
+               </HBox.margin>
+            </Label>
+         </children>
+      </HBox>
+   </children>
+</GridPane>

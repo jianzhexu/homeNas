@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.shape.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gt.homeNas.application.controller.LoginController">
+   <children>
+      <PasswordField fx:id="userPasswdInput" layoutX="220.0" layoutY="200.0" onInputMethodTextChanged="#typingPasswd" promptText="请输入密码" AnchorPane.bottomAnchor="173.0" AnchorPane.leftAnchor="220.0" AnchorPane.rightAnchor="219.0" AnchorPane.topAnchor="200.0" />
+      <TextField fx:id="userAccountInput" layoutX="220.0" layoutY="156.0" onInputMethodTextChanged="#typingUserAccount" promptText="请输入账户名" AnchorPane.bottomAnchor="217.0" AnchorPane.leftAnchor="220.0" AnchorPane.rightAnchor="219.0" AnchorPane.topAnchor="156.0" />
+      <Button fx:id="loginButton" layoutX="337.0" layoutY="239.0" mnemonicParsing="false" onKeyPressed="#enterLogin" onMouseClicked="#userLogin" text="登录" />
+      <CheckBox fx:id="loginStillCheckBox" layoutX="220.0" layoutY="239.0" mnemonicParsing="false" onAction="#userStillLogin" text="保持登录状态" />
+      <CheckBox fx:id="confirmClauseCheckBox" layoutX="220.0" layoutY="286.0" mnemonicParsing="false" onAction="#confirmClause" text="勾选确认用户条款和隐私协议" />
+      <Label layoutX="189.0" layoutY="43.0" text="运营管理">
+         <font>
+            <Font name="System Bold" size="45.0" />
+         </font>
+      </Label>
+   </children>
+   <cursor>
+      <Cursor fx:constant="DEFAULT" />
+   </cursor>
+</AnchorPane>
